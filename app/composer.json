@@ -1,0 +1,14 @@
+{
+    "name": "danilocgsilva/configurati-app",
+    "description": "Throws server receipts",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Danilo Silva",
+            "email": "contact@danilocgsilva.me"
+        }
+    ],
+    "require": {
+        "danilocgsilva/configuration_spitter": "^0.1.1"
+    }
+}

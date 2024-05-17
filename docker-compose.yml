@@ -2,3 +2,5 @@ services:
   configuration_spitter:
     build:
       context: .
+    volumes:
+      - ./app:/app
