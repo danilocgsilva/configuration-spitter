@@ -1,0 +1,4 @@
+services:
+  configuration_spitter:
+    build:
+      context: .
