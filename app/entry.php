@@ -6,7 +6,9 @@ require "vendor/autoload.php";
 
 use Danilocgsilva\ConfigurationSpitter\Receipt\Receipt;
 
-$receiptData = (new Receipt())->get();
+$receipt = new Receipt();
+print($receipt->explain());
+$receiptData = $receipt->get();
 
 $dockerCompose = $receiptData["docker-compose.yml"];
 $dockerFile = $receiptData["DockerFile"];
