@@ -3,5 +3,4 @@ services:
     build:
       context: .
     volumes:
-      - ./app:/app
       - ./output:/output
