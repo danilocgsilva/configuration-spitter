@@ -1,7 +1,5 @@
 <?php
 
-declare(strict_type=1);
-
 function generateFiles($receiptData) {
     mkdir(
         $fullPathDirectory = DIRECTORY_SEPARATOR . 'output' . DIRECTORY_SEPARATOR . ($dateHash = (new DateTime())->format("Ymd-H\hi\ms\s"))
