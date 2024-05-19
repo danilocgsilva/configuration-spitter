@@ -1,6 +1,0 @@
-services:
-  configuration_spitter:
-    build:
-      context: .
-    volumes:
-      - ./output:/output
