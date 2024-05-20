@@ -5,14 +5,15 @@ declare(strict_types=1);
 require "vendor/autoload.php";
 require "functions.php";
 
-use Danilocgsilva\ConfigurationSpitter\Receipt\Receipt;
+use Danilocgsilva\ConfigurationSpitter\Receipt\DebianReceipt;
+use Danilocgsilva\ConfigurationSpitter\Receipt\MariadbReceipt;
 
-$receipt = new Receipt();
+$receipt = new DebianReceipt();
 $parameters = $receipt->getParameters();
 
 print($receipt->explain() . "\n");
 while (true) {
-    $answer = readline("It is ok? Type \"yes\" if so. Type \"show options\" to see further configuration. Type an option name to custom the receipt: \n");
+    $answer = readline("It is ok? Type \"yes\" if so. Type \"change\" if you want to change to another thing. Type \"show options\" to see further configuration. Type an option name to custom the receipt: \n");
 
     if (in_array($answer, $parameters)) {
         $configurationParameter = $answer;
@@ -22,9 +23,12 @@ while (true) {
     switch ($answer) {
         case "configure":
             $receipt->setProperty($configurationParameter);
-            print("----\n");
-            print($receipt->explain() . "\n");
-            print("----\n");
+            explain($receipt);
+            break 1;
+        case "change":
+            print("Let's change!\n");
+            $receipt = new MariadbReceipt();
+            explain($receipt);
             break 1;
         case "yes":
             generateFiles($receipt->get());

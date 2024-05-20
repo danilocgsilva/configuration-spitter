@@ -9,6 +9,6 @@
         }
     ],
     "require": {
-        "danilocgsilva/configuration_spitter": "^0.2.0"
+        "danilocgsilva/configuration_spitter": "^1.0.0"
     }
 }

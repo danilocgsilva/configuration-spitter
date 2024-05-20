@@ -23,3 +23,9 @@ function generateFiles($receiptData) {
         print($e->getMessage() . "\n");
     }
 }
+
+function explain($receipt) {
+    print("----\n");
+    print($receipt->explain() . "\n");
+    print("----\n");
+}
