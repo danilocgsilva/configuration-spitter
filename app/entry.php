@@ -8,16 +8,29 @@ require "functions.php";
 use Danilocgsilva\ConfigurationSpitter\Receipt\Receipt;
 
 $receipt = new Receipt();
+$parameters = $receipt->getParameters();
 
 print($receipt->explain() . "\n");
 while (true) {
-    $okAnswer = readline("It is ok? Type \"yes\" if so. Type \"show options\" to see further configuration: \n");
-    switch ($okAnswer) {
+    $answer = readline("It is ok? Type \"yes\" if so. Type \"show options\" to see further configuration. Type an option name to custom the receipt: \n");
+
+    if (in_array($answer, $parameters)) {
+        $configurationParameter = $answer;
+        $answer = "configure";
+    }
+    
+    switch ($answer) {
+        case "configure":
+            $receipt->setProperty($configurationParameter);
+            print("----\n");
+            print($receipt->explain() . "\n");
+            print("----\n");
+            break 1;
         case "yes":
             generateFiles($receipt->get());
             break 2;
         case "show options":
-            foreach ($receipt->getParameters() as $parameter) {
+            foreach ($parameters as $parameter) {
                 print("* " . $parameter . "\n");
             }
             print("* exit\n");
@@ -25,7 +38,8 @@ while (true) {
         case "exit":
             break 2;
         case "":
-            if ("yes" === readline("Are you sure to exit?:\n ")) {
+            $answer = readline("Are you sure to exit?:\n ");
+            if ("yes" === $answer || "exit" === $answer) {
                 break 2;
             }
             break 1;
