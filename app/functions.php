@@ -12,11 +12,13 @@ function generateFiles($receiptData) {
         );
     
         print(sprintf("File %s created in %s\n", "docker-compose.yml", $dateHash));
-    
-        file_put_contents(
-            $fullPathDirectory . DIRECTORY_SEPARATOR . "Dockerfile",
-            $receiptData["DockerFile"]
-        );
+
+        if ($receiptData["DockerFile"]) {
+            file_put_contents(
+                $fullPathDirectory . DIRECTORY_SEPARATOR . "Dockerfile",
+                $receiptData["DockerFile"]
+            );
+        }
     
         print(sprintf("File %s created in %s\n", "Dockerfile", $dateHash));
     } catch (Exception $e) {

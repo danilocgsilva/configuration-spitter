@@ -15,13 +15,15 @@ print($receipt->explain() . "\n");
 while (true) {
     $answer = readline("It is ok? Type \"yes\" if so. Type \"change\" if you want to change to another thing. Type \"show options\" to see further configuration. Type an option name to custom the receipt: \n");
 
-    if (in_array($answer, $parameters)) {
+    $multiPartAnswer = explode(":", $answer);
+    if (in_array($multiPartAnswer[0], $parameters)) {
         $configurationParameter = $answer;
         $answer = "configure";
     }
     
     switch ($answer) {
         case "configure":
+            print("Agora sim!\n");
             $receipt->setProperty($configurationParameter);
             explain($receipt);
             break 1;
@@ -29,6 +31,7 @@ while (true) {
             print("Let's change!\n");
             $receipt = new MariadbReceipt();
             explain($receipt);
+            $parameters = $receipt->getParameters();
             break 1;
         case "yes":
             generateFiles($receipt->get());
