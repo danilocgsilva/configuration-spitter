@@ -31,3 +31,23 @@ function explain($receipt) {
     print($receipt->explain() . "\n");
     print("----\n");
 }
+
+function isMultiParameter($answer, $parameters): array
+{
+    $useReceiptCandidate = substr($answer, 0, 11);
+    if ($useReceiptCandidate === "use receipt") {
+        $configurationParameter = "choosed receipt";
+        $answer = "selected-receipt";
+
+        return [$configurationParameter, $answer];
+    }
+    
+    $multiPartAnswer = explode(":", $answer);
+    if (in_array($multiPartAnswer[0], $parameters)) {
+        $configurationParameter = $answer; 
+        $answer = "configure";
+
+        return [$configurationParameter, $answer];
+    }
+    return ["", $answer];
+}

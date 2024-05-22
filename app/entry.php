@@ -7,23 +7,34 @@ require "functions.php";
 
 use Danilocgsilva\ConfigurationSpitter\Receipt\DebianReceipt;
 use Danilocgsilva\ConfigurationSpitter\Receipt\MariadbReceipt;
+use Danilocgsilva\ConfigurationSpitter\Receipt\MysqlReceipt;
+
+$receiptsList = [
+    DebianReceipt::class,
+    MariadbReceipt::class,
+    MysqlReceipt::class,
+];
 
 $receipt = new DebianReceipt();
 $parameters = $receipt->getParameters();
 
 print($receipt->explain() . "\n");
 while (true) {
-    $answer = readline("It is ok? Type \"yes\" if so. Type \"change\" if you want to change to another thing. Type \"show options\" to see further configuration. Type an option name to custom the receipt: \n");
+    print("It is ok?\n");
+    print("-> Type \"yes\" if so.\n");
+    print("-> Type \"change\" if you want to change to another thing.\n");
+    print("-> Type \"show options\" to see further configuration.\n");
+    print("-> Type an option name to custom the receipt.\n");
+    print("-> Type \"show receipts\" to see further receipts: \n");
+    print("-> Type \"use receipt YOUR_RECEIPT\" to change to a specific receipt: \n");
+    $answer = readline();
 
-    $multiPartAnswer = explode(":", $answer);
-    if (in_array($multiPartAnswer[0], $parameters)) {
-        $configurationParameter = $answer; 
-        $answer = "configure";
-    }
+    $multiParameterResult = isMultiParameter($answer, $parameters);
+    $configurationParameter = $multiParameterResult[0];
+    $answer = $multiParameterResult[1];
     
     switch ($answer) {
         case "configure":
-            print("Agora sim!\n");
             $receipt->setProperty($configurationParameter);
             explain($receipt);
             break 1;
@@ -44,6 +55,12 @@ while (true) {
             }
             print("* change service name\n");
             print("* exit\n");
+            break 1;
+        case "show receipts":
+            print("Choose the receipt base:\n");
+            foreach ($receiptsList as $receipt) {
+                print("* " . $receipt::getName() . "\n");
+            }
             break 1;
         case "exit":
             break 2;
