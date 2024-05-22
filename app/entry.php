@@ -17,7 +17,7 @@ while (true) {
 
     $multiPartAnswer = explode(":", $answer);
     if (in_array($multiPartAnswer[0], $parameters)) {
-        $configurationParameter = $answer;
+        $configurationParameter = $answer; 
         $answer = "configure";
     }
     
@@ -36,10 +36,13 @@ while (true) {
         case "yes":
             generateFiles($receipt->get());
             break 2;
+        case "change service name":
+            break 2;
         case "show options":
             foreach ($parameters as $parameter) {
                 print("* " . $parameter . "\n");
             }
+            print("* change service name\n");
             print("* exit\n");
             break 1;
         case "exit":
