@@ -22,7 +22,6 @@ print($receipt->explain() . "\n");
 while (true) {
     print("It is ok?\n");
     print("-> Type \"yes\" if so.\n");
-    print("-> Type \"change\" if you want to change to another thing.\n");
     print("-> Type \"show options\" to see further configuration.\n");
     print("-> Type an option name to custom the receipt.\n");
     print("-> Type \"show receipts\" to see further receipts: \n");
@@ -42,6 +41,7 @@ while (true) {
             print("The choosed receipt is " . $configurationParameter . "\n");
             $receiptName = "\\Danilocgsilva\\ConfigurationSpitter\\Receipt\\" . $configurationParameter . "Receipt";
             $receipt = new $receiptName();
+            $parameters = $receipt->getParameters();
             explain($receipt);
             break 1;
         case "yes":
@@ -69,6 +69,7 @@ while (true) {
             }
             break 1;
         default:
+            print("You give a not know answer.");
             break 1;
     }
 }
