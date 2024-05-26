@@ -36,7 +36,8 @@ function isMultiParameter($answer, $parameters): array
 {
     $useReceiptCandidate = substr($answer, 0, 11);
     if ($useReceiptCandidate === "use receipt") {
-        $configurationParameter = "choosed receipt";
+        print("we are here!\n");
+        $configurationParameter = substr($answer, 12);
         $answer = "selected-receipt";
 
         return [$configurationParameter, $answer];

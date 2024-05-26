@@ -38,6 +38,12 @@ while (true) {
             $receipt->setProperty($configurationParameter);
             explain($receipt);
             break 1;
+        case "selected-receipt":
+            print("The choosed receipt is " . $configurationParameter . "\n");
+            $receiptName = "\\Danilocgsilva\\ConfigurationSpitter\\Receipt\\" . $configurationParameter . "Receipt";
+            $receipt = new $receiptName();
+            explain($receipt);
+            break 1;
         case "change":
             print("Let's change!\n");
             $receipt = new MariadbReceipt();
