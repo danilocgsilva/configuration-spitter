@@ -44,16 +44,8 @@ while (true) {
             $receipt = new $receiptName();
             explain($receipt);
             break 1;
-        case "change":
-            print("Let's change!\n");
-            $receipt = new MariadbReceipt();
-            explain($receipt);
-            $parameters = $receipt->getParameters();
-            break 1;
         case "yes":
             generateFiles($receipt->get());
-            break 2;
-        case "change service name":
             break 2;
         case "show options":
             foreach ($parameters as $parameter) {
