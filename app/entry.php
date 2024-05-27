@@ -8,11 +8,13 @@ require "functions.php";
 use Danilocgsilva\ConfigurationSpitter\Receipt\DebianReceipt;
 use Danilocgsilva\ConfigurationSpitter\Receipt\MariadbReceipt;
 use Danilocgsilva\ConfigurationSpitter\Receipt\MysqlReceipt;
+use Danilocgsilva\ConfigurationSpitter\Receipt\NodeReceipt;
 
 $receiptsList = [
     DebianReceipt::class,
     MariadbReceipt::class,
     MysqlReceipt::class,
+    NodeReceipt::class
 ];
 
 $receipt = new DebianReceipt();
