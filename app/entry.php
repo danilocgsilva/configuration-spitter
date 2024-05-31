@@ -19,6 +19,7 @@ $receiptsList = [
 
 $receipt = new DebianReceipt();
 $parameters = $receipt->getParameters();
+$folder_name = null;
 
 print($receipt->explain() . "\n");
 while (true) {
@@ -28,6 +29,7 @@ while (true) {
     print("-> Type an option name to custom the receipt.\n");
     print("-> Type \"show receipts\" to see further receipts: \n");
     print("-> Type \"use receipt YOUR_RECEIPT\" to change to a specific receipt: \n");
+    print("-> Type \"folder name\" to change the output folder name: \n");
     $answer = readline();
 
     $multiParameterResult = isMultiParameter($answer, $parameters);
@@ -35,6 +37,10 @@ while (true) {
     $answer = $multiParameterResult[1];
     
     switch ($answer) {
+        case "folder name":
+            $folder_name = readline("Type the desired folder name: ");
+            print("You setted the output folder name as " . $folder_name);
+            break 1;
         case "configure":
             $receipt->setProperty($configurationParameter);
             explain($receipt);
@@ -47,7 +53,7 @@ while (true) {
             explain($receipt);
             break 1;
         case "yes":
-            generateFiles($receipt->get());
+            generateFiles($receipt->get(), $folder_name);
             break 2;
         case "show options":
             foreach ($parameters as $parameter) {
