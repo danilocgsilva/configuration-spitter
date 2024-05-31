@@ -1,8 +1,11 @@
 <?php
 
-function generateFiles($receiptData) {
+function generateFiles($receiptData, $directory_name = null) {
+    if ($directory_name === null) {
+        $directory_name = ($dateHash = (new DateTime())->format("Ymd-H\hi\ms\s"));
+    }
     mkdir(
-        $fullPathDirectory = DIRECTORY_SEPARATOR . 'output' . DIRECTORY_SEPARATOR . ($dateHash = (new DateTime())->format("Ymd-H\hi\ms\s"))
+        $fullPathDirectory = DIRECTORY_SEPARATOR . 'output' . DIRECTORY_SEPARATOR . $directory_name
     );
     
     try {
