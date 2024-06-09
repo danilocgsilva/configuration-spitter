@@ -1,5 +1,7 @@
 #!/bin/bash
 
-read -p "Which is the image Docker name? " IMAGE_NAME
+TAG_RUN=$(cat tag)
 
-docker run -ti -v ./output:/output $IMAGE_NAME php ./app/entry.php
+IMAGE_ID=$(docker image ls | grep -i $TAG_RUN | awk '{print $3}')
+
+docker run -ti -v ./output:/output $IMAGE_ID php ./app/entry.php

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-TAG_IDENTITY=$(configuration-spitter-$(date "+%Y%m%d-%Hh%Mm%Ss"))
+TAG_IDENTITY=configuration-spitter-$(date "+%Y%m%d-%Hh%Mm%Ss")
 
 docker build . -t $TAG_IDENTITY
 
