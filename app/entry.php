@@ -5,10 +5,13 @@ declare(strict_types=1);
 require "vendor/autoload.php";
 require "functions.php";
 
-use Danilocgsilva\ConfigurationSpitter\Receipt\DebianReceipt;
-use Danilocgsilva\ConfigurationSpitter\Receipt\MariadbReceipt;
-use Danilocgsilva\ConfigurationSpitter\Receipt\MysqlReceipt;
-use Danilocgsilva\ConfigurationSpitter\Receipt\NodeReceipt;
+use Danilocgsilva\ConfigurationSpitter\Receipt\{
+    DebianReceipt,
+    MariadbReceipt,
+    MysqlReceipt,
+    NodeReceipt
+};
+use Danilocgsilva\ConfigurationSpitterFront\Front;
 
 $receiptsList = [
     DebianReceipt::class,
@@ -20,6 +23,8 @@ $receiptsList = [
 $receipt = new DebianReceipt();
 $parameters = $receipt->getParameters();
 $folder_name = null;
+$front = new Front();
+$front->setReceipt($receipt);
 
 print($receipt->explain() . "\n");
 while (true) {
@@ -39,18 +44,19 @@ while (true) {
     switch ($answer) {
         case "folder name":
             $folder_name = readline("Type the desired folder name: ");
-            print("You setted the output folder name as " . $folder_name);
+            $front->setFolderName($folder_name);
+            print("You setted the output folder name as " . $folder_name . ".\n");
             break 1;
         case "configure":
             $receipt->setProperty($configurationParameter);
-            explain($receipt);
+            $front->explain();
             break 1;
         case "selected-receipt":
             print("The choosed receipt is " . $configurationParameter . "\n");
             $receiptName = "\\Danilocgsilva\\ConfigurationSpitter\\Receipt\\" . $configurationParameter . "Receipt";
             $receipt = new $receiptName();
             $parameters = $receipt->getParameters();
-            explain($receipt);
+            $front->explain();
             break 1;
         case "yes":
             generateFiles($receipt->get(), $folder_name);
