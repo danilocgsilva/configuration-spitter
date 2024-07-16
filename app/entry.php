@@ -23,7 +23,6 @@ $folder_name = null;
 
 print($receipt->explain() . "\n");
 while (true) {
-    print("It is ok?\n");
     print("-> Type \"yes\" if so.\n");
     print("-> Type \"show options\" to see further configuration.\n");
     print("-> Type an option name to custom the receipt.\n");
@@ -61,6 +60,8 @@ while (true) {
             }
             print("* change service name\n");
             print("* exit\n");
+            print($receipt->explain() . "\n");
+            print("So, how to proceed?\n");
             break 1;
         case "show receipts":
             print("Choose the receipt base:\n");
@@ -77,7 +78,7 @@ while (true) {
             }
             break 1;
         default:
-            print("You give a not know answer.");
+            print("You give a not known answer.\n");
             break 1;
     }
 }
