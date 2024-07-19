@@ -6,6 +6,7 @@ RUN apt-get install vim zip wget curl -y
 RUN apt-get install php php-curl php-xml -y
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/bin/ --filename=composer
 RUN mkdir /output
+WORKDIR /app
 
 COPY ./app /app
 RUN composer install -d /app
