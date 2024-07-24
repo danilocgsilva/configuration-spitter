@@ -12,9 +12,10 @@ class FileCreator
 
     private function createFolderIfRequired(string $filePath)
     {
-        $pathParts = explode(DIRECTORY_SEPARATOR, $filePath);
-        if (count($pathParts) > 1) {
-            mkdir($pathParts[0]);
+        $pathInfo = pathinfo($filePath);
+        $onlyPath = $pathInfo["dirname"];
+        if (!is_dir($onlyPath)) {
+            mkdir($onlyPath);
         }
     }
 }

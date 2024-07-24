@@ -13,33 +13,10 @@ function generateFiles($receiptData, $directory_name = null)
         $fullPathDirectory = DIRECTORY_SEPARATOR . 'output' . DIRECTORY_SEPARATOR . $directory_name
     );
 
+    $fileCreator = new FileCreator();
     try {
-        // file_put_contents(
-        //     $fullPathDirectory . DIRECTORY_SEPARATOR . "docker-compose.yml",
-        //     $receiptData["docker-compose.yml"]
-        // );
-
-        // print(sprintf("File %s created in %s\n", "docker-compose.yml", $dateHash));
-
-        // if ($receiptData["DockerFile"]) {
-        //     file_put_contents(
-        //         $fullPathDirectory . DIRECTORY_SEPARATOR . "Dockerfile",
-        //         $receiptData["DockerFile"]
-        //     );
-        // }
-
-        // print(sprintf("File %s created in %s\n", "Dockerfile", $dateHash));
-
         foreach ($receiptData as $filePath => $fileFromReceiptContent) {
-
-            print("File path to be created: " . $filePath . "\n");
-
-            $fileCreator = new FileCreator();
-            
-            // file_put_contents(
-            //     $fullPathDirectory . DIRECTORY_SEPARATOR . $filePath,
-            //     $fileFromReceiptContent
-            // );
+            print ("File to be created: " . $filePath . "\n");
             $fileCreator->create($fullPathDirectory . DIRECTORY_SEPARATOR . $filePath, $fileFromReceiptContent);
         }
     } catch (Exception $e) {
