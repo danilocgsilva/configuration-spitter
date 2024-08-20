@@ -34,6 +34,7 @@ while (true) {
     print("-> Type \"show receipts\" to see further receipts: \n");
     print("-> Type \"use receipt YOUR_RECEIPT\" to change to a specific receipt: \n");
     print("-> Type \"folder name\" to change the output folder name: \n");
+    print("-> Type \"name all\" to change at same time, the service name, container name and folder name: \n");
     $answer = readline();
 
     $multiParameterResult = isMultiParameter($answer, $parameters);
@@ -45,6 +46,12 @@ while (true) {
             $folder_name = readline("Type the desired folder name: ");
             $front->setFolderName($folder_name);
             print("You setted the output folder name as " . $folder_name . ".\n");
+            break 1;
+        case "name all":
+            $name_for_all = readline("Type the desired name: ");
+            $front->setFolderName($name_for_all);
+            $receipt->setProperty("service-name:" . $name_for_all);
+            $receipt->setProperty("container-name:" . $name_for_all);
             break 1;
         case "configure":
             $receipt->setProperty($configurationParameter);

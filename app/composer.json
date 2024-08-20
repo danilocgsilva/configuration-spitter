@@ -2,6 +2,7 @@
     "name": "danilocgsilva/configurati-app",
     "description": "Throws server receipts",
     "type": "project",
+    "license": "MIT",
     "autoload": {
         "psr-4": {
             "Danilocgsilva\\ConfigurationSpitterFront\\": "src/"
