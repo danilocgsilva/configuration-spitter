@@ -22,7 +22,6 @@ $receiptsList = [
 
 $receipt = new DebianReceipt();
 $parameters = $receipt->getParameters();
-$folder_name = null;
 $front = new Front();
 $front->setReceipt($receipt);
 
@@ -43,12 +42,12 @@ while (true) {
     
     switch ($answer) {
         case "folder name":
-            $folder_name = readline("Type the desired folder name: ");
-            $front->setFolderName($folder_name);
-            print("You setted the output folder name as " . $folder_name . ".\n");
+            $front->setFolderName(readline("Type the desired folder name: "));
+            print("You setted the output folder name as " . $front->getFolderName() . ".\n");
             break 1;
         case "name all":
             $name_for_all = readline("Type the desired name: ");
+
             $front->setFolderName($name_for_all);
             $receipt->setProperty("service-name:" . $name_for_all);
             $receipt->setProperty("container-name:" . $name_for_all);
@@ -65,7 +64,7 @@ while (true) {
             $front->explain();
             break 1;
         case "yes":
-            generateFiles($receipt->get(), $folder_name);
+            generateFiles($receipt->get(), $front->getFolderName());
             break 2;
         case "show options":
             foreach ($parameters as $parameter) {

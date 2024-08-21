@@ -30,4 +30,9 @@ class Front
         }
         print($this->receipt->explain());
     }
+
+    public function getFolderName(): string
+    {
+        return $this->folderName;
+    }
 }
