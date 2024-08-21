@@ -52,7 +52,6 @@ while (true) {
             $front->setFolderName($name_for_all);
             $receipt->setProperty("service-name:" . $name_for_all);
             $receipt->setProperty("container-name:" . $name_for_all);
-            $front->setFolderName($name_for_all);
             break 1;
         case "configure":
             $receipt->setProperty($configurationParameter);
