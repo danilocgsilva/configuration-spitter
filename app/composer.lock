@@ -8,16 +8,16 @@
     "packages": [
         {
             "name": "danilocgsilva/configuration_spitter",
-            "version": "1.11.8",
+            "version": "1.11.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/danilocgsilva/configuration-spitter-core.git",
-                "reference": "a55e59386ba73f914ca8f4c146acd4ef7c309c5b"
+                "reference": "7a39e92e9ccbdafd8c3ade2bbd4dcc2d71d67f20"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/danilocgsilva/configuration-spitter-core/zipball/a55e59386ba73f914ca8f4c146acd4ef7c309c5b",
-                "reference": "a55e59386ba73f914ca8f4c146acd4ef7c309c5b",
+                "url": "https://api.github.com/repos/danilocgsilva/configuration-spitter-core/zipball/7a39e92e9ccbdafd8c3ade2bbd4dcc2d71d67f20",
+                "reference": "7a39e92e9ccbdafd8c3ade2bbd4dcc2d71d67f20",
                 "shasum": ""
             },
             "require": {
@@ -43,9 +43,9 @@
             "description": "Returns receipts or configuration script",
             "support": {
                 "issues": "https://github.com/danilocgsilva/configuration-spitter-core/issues",
-                "source": "https://github.com/danilocgsilva/configuration-spitter-core/tree/1.11.8"
+                "source": "https://github.com/danilocgsilva/configuration-spitter-core/tree/1.11.9"
             },
-            "time": "2024-08-03T19:27:47+00:00"
+            "time": "2024-08-20T11:24:14+00:00"
         },
         {
             "name": "symfony/polyfill-ctype",
