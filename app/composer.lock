@@ -8,16 +8,16 @@
     "packages": [
         {
             "name": "danilocgsilva/configuration_spitter",
-            "version": "1.11.9",
+            "version": "1.12.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/danilocgsilva/configuration-spitter-core.git",
-                "reference": "7a39e92e9ccbdafd8c3ade2bbd4dcc2d71d67f20"
+                "reference": "4e02f0c06df40afae00b5826d81dda34145469c9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/danilocgsilva/configuration-spitter-core/zipball/7a39e92e9ccbdafd8c3ade2bbd4dcc2d71d67f20",
-                "reference": "7a39e92e9ccbdafd8c3ade2bbd4dcc2d71d67f20",
+                "url": "https://api.github.com/repos/danilocgsilva/configuration-spitter-core/zipball/4e02f0c06df40afae00b5826d81dda34145469c9",
+                "reference": "4e02f0c06df40afae00b5826d81dda34145469c9",
                 "shasum": ""
             },
             "require": {
@@ -34,6 +34,9 @@
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
             "authors": [
                 {
                     "name": "Danilo Silva",
@@ -43,9 +46,9 @@
             "description": "Returns receipts or configuration script",
             "support": {
                 "issues": "https://github.com/danilocgsilva/configuration-spitter-core/issues",
-                "source": "https://github.com/danilocgsilva/configuration-spitter-core/tree/1.11.9"
+                "source": "https://github.com/danilocgsilva/configuration-spitter-core/tree/1.12.0"
             },
-            "time": "2024-08-20T11:24:14+00:00"
+            "time": "2024-09-02T02:33:09+00:00"
         },
         {
             "name": "symfony/polyfill-ctype",
@@ -128,16 +131,16 @@
         },
         {
             "name": "symfony/yaml",
-            "version": "v7.1.1",
+            "version": "v7.1.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/yaml.git",
-                "reference": "fa34c77015aa6720469db7003567b9f772492bf2"
+                "reference": "92e080b851c1c655c786a2da77f188f2dccd0f4b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/yaml/zipball/fa34c77015aa6720469db7003567b9f772492bf2",
-                "reference": "fa34c77015aa6720469db7003567b9f772492bf2",
+                "url": "https://api.github.com/repos/symfony/yaml/zipball/92e080b851c1c655c786a2da77f188f2dccd0f4b",
+                "reference": "92e080b851c1c655c786a2da77f188f2dccd0f4b",
                 "shasum": ""
             },
             "require": {
@@ -179,7 +182,7 @@
             "description": "Loads and dumps YAML files",
             "homepage": "https://symfony.com",
             "support": {
-                "source": "https://github.com/symfony/yaml/tree/v7.1.1"
+                "source": "https://github.com/symfony/yaml/tree/v7.1.4"
             },
             "funding": [
                 {
@@ -195,7 +198,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2024-05-31T14:57:53+00:00"
+            "time": "2024-08-12T09:59:40+00:00"
         }
     ],
     "packages-dev": [],
