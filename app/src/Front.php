@@ -3,6 +3,7 @@
 namespace Danilocgsilva\ConfigurationSpitterFront;
 
 use Danilocgsilva\ConfigurationSpitter\Receipt\ReceiptInterface;
+use DateTime;
 
 class Front
 {
@@ -33,6 +34,11 @@ class Front
 
     public function getFolderName(): string
     {
-        return $this->folderName;
+        if (isset($this->folderName)) {
+            return $this->folderName;
+        }
+        $dateTime = new DateTime();
+
+        return $dateTime->format("Ymd-H\hi\ms\s");
     }
 }
