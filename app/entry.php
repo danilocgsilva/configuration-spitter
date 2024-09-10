@@ -34,6 +34,7 @@ while (true) {
     print("-> Type \"use receipt YOUR_RECEIPT\" to change to a specific receipt: \n");
     print("-> Type \"folder name\" to change the output folder name: \n");
     print("-> Type \"name all\" to change at same time, the service name, container name and folder name: \n");
+    print("-> Type \"app folder\", to create a default app folder in container and the volume in the host.");
     $answer = readline();
 
     $multiParameterResult = isMultiParameter($answer, $parameters);
@@ -45,6 +46,9 @@ while (true) {
             $front->setFolderName(readline("Type the desired folder name: "));
             print("You setted the output folder name as " . $front->getFolderName() . ".\n");
             break 1;
+        case "app folder":
+            $receipt->onAppFolder();
+            break;
         case "name all":
             $name_for_all = readline("Type the desired name: ");
 

@@ -8,16 +8,16 @@
     "packages": [
         {
             "name": "danilocgsilva/configuration_spitter",
-            "version": "1.12.0",
+            "version": "1.13.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/danilocgsilva/configuration-spitter-core.git",
-                "reference": "4e02f0c06df40afae00b5826d81dda34145469c9"
+                "reference": "91d0b54702f94bfe7b7432f314f67e7ec3863e6c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/danilocgsilva/configuration-spitter-core/zipball/4e02f0c06df40afae00b5826d81dda34145469c9",
-                "reference": "4e02f0c06df40afae00b5826d81dda34145469c9",
+                "url": "https://api.github.com/repos/danilocgsilva/configuration-spitter-core/zipball/91d0b54702f94bfe7b7432f314f67e7ec3863e6c",
+                "reference": "91d0b54702f94bfe7b7432f314f67e7ec3863e6c",
                 "shasum": ""
             },
             "require": {
@@ -46,26 +46,26 @@
             "description": "Returns receipts or configuration script",
             "support": {
                 "issues": "https://github.com/danilocgsilva/configuration-spitter-core/issues",
-                "source": "https://github.com/danilocgsilva/configuration-spitter-core/tree/1.12.0"
+                "source": "https://github.com/danilocgsilva/configuration-spitter-core/tree/1.13.0"
             },
-            "time": "2024-09-02T02:33:09+00:00"
+            "time": "2024-09-10T11:48:47+00:00"
         },
         {
             "name": "symfony/polyfill-ctype",
-            "version": "v1.30.0",
+            "version": "v1.31.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-ctype.git",
-                "reference": "0424dff1c58f028c451efff2045f5d92410bd540"
+                "reference": "a3cc8b044a6ea513310cbd48ef7333b384945638"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-ctype/zipball/0424dff1c58f028c451efff2045f5d92410bd540",
-                "reference": "0424dff1c58f028c451efff2045f5d92410bd540",
+                "url": "https://api.github.com/repos/symfony/polyfill-ctype/zipball/a3cc8b044a6ea513310cbd48ef7333b384945638",
+                "reference": "a3cc8b044a6ea513310cbd48ef7333b384945638",
                 "shasum": ""
             },
             "require": {
-                "php": ">=7.1"
+                "php": ">=7.2"
             },
             "provide": {
                 "ext-ctype": "*"
@@ -111,7 +111,7 @@
                 "portable"
             ],
             "support": {
-                "source": "https://github.com/symfony/polyfill-ctype/tree/v1.30.0"
+                "source": "https://github.com/symfony/polyfill-ctype/tree/v1.31.0"
             },
             "funding": [
                 {
@@ -127,7 +127,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2024-05-31T15:07:36+00:00"
+            "time": "2024-09-09T11:45:10+00:00"
         },
         {
             "name": "symfony/yaml",

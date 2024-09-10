@@ -7,7 +7,7 @@ use Danilocgsilva\ConfigurationSpitterFront\FileCreator;
 function generateFiles($receiptData, $directory_name = null)
 {
     if ($directory_name === null) {
-        $directory_name = ($dateHash = (new DateTime())->format("Ymd-H\hi\ms\s"));
+        $directory_name = (new DateTime())->format("Ymd-H\hi\ms\s");
     }
     mkdir(
         $fullPathDirectory = DIRECTORY_SEPARATOR . 'output' . DIRECTORY_SEPARATOR . $directory_name
